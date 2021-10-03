@@ -32,7 +32,7 @@
 
 # Search by query
 >>> from kusonime import Search
->>> s = Search("maou").fetch[0].fetch
+>>> s = Search("maou").fetch[0].fetch()
 >>> s.to_json
 
 # Search by query (next_page)
