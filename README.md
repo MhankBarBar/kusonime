@@ -6,10 +6,10 @@
 ----------
 - [x] Scrap from url
 - [x] Scrap from recommendation
+- [x] Search by query
 ----------
 ### Todo
 ----------
-- [+] Search by query
 - [+] Search by genre
 ----------
 
