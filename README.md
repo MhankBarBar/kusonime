@@ -32,13 +32,13 @@
 
 # Search by query
 >>> from kusonime import Search
->>> s = Search("maou").fetch[0].fetch()
+>>> s = Search("maou").fetch[0]
 >>> s.to_json
 
 # Search by query (next_page)
 >>> from kusonime import Search
 >>> s = Search("maou").fetch
->>> r = s.next_page[0].fetch()
+>>> r = s.next_page[0]
 >>> r.to_json
 ```
 
