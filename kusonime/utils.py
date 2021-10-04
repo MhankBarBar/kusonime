@@ -120,6 +120,10 @@ class Recom:
 class Search:
 
     def __init__(self, query: Union[str], page: Union[int]=1) -> None:
+        """
+        :query: String
+        :page: Integer
+        """
         self.page = page
         self.query = query
         self.url = "https://kusonime.com/page/{0}/?s={1}&post_type=post"
@@ -130,7 +134,7 @@ class Search:
             parse = bs(get(self.url.format(self.page, self.query), headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36 OPR/67.0.3575.137"}).text, "html.parser").find("div", {"class": "venser"})
             search = KusoSearch()
             if (res := parse.select("a")):
-                search.result = [Scrap(i.get("href")) for i in res if i.img]
+                search.result = [Scrap(i.get("href")).fetch() for i in res if i.img]
                 if res[-1].text == "Next Page »":
                     self.page += 1
                     search.next_page = self.fetch

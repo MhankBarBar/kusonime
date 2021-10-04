@@ -17,17 +17,17 @@
 ```python
 # Get download url
 >>> from kusonime import Scrap
->>> sc = Scrap("https://kusonime.com/kawaisou-batch-sub-indo/")
+>>> sc = Scrap("https://kusonime.com/kawaisou-batch-sub-indo/").fetch()
 >>> sc.to_json
 
 # Not get download url
 >>> from kusonime import Scrap
->>> sc = Scrap("https://kusonime.com/kawaisou-batch-sub-indo/", False)
+>>> sc = Scrap("https://kusonime.com/kawaisou-batch-sub-indo/").fetch(False)
 >>> sc.to_json
 
 # Scrap from recommendation
 >>> from kusonime import Recom
->>> sc = Recom(2) # get from page 2
+>>> sc = Recom(2).fetch # get from page 2
 >>> sc[0].to_json
 
 # Search by query
@@ -44,5 +44,5 @@
 
 ### Installation
 ```bash
-> python3 -m pip install requests bs4
+> python3 -m pip install -r requirements.txt
 ```
